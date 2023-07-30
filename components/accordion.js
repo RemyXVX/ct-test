@@ -35,14 +35,12 @@ const accordion = () => {
     if (window.innerWidth <= 640) {
       const isTabOpen = tab.classList.contains('active');
 
-      // Close previously opened tab
       const activeTab = accordionBox.querySelector('.active');
       if (activeTab && activeTab !== tab) {
         activeTab.classList.remove('active');
         loadAccordionImage('');
       }
 
-      // Toggle the clicked tab
       if (!isTabOpen) {
         tab.classList.add('active');
         loadAccordionImage(image);
@@ -51,12 +49,9 @@ const accordion = () => {
         loadAccordionImage('');
       }
     } else {
-      // For larger screens, simply load the image without accordion behavior
       loadAccordionImage(image);
     }
   };
-
-  // Load the first tab's content on initial render
   toggleAccordion('./bt.tab1.png', tab1);
 
   return accordionBox;
