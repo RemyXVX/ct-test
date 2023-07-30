@@ -1,6 +1,6 @@
 const header = () => {
   const headerContainer = document.createElement('div')
-  headerContainer.className = 'flex items-center justify-center flex-col';
+  headerContainer.className = 'flex items-center justify-center flex-col pb-6';
 
   const wrapContent = document.createElement('div');
   wrapContent.className = 'flex items-center space-x-4';
