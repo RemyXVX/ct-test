@@ -20,19 +20,29 @@ const accordion = () => {
   accordionBox.appendChild(tab2);
 
   const loadAccordionImage = (image) => {
+    const container = document.createElement('div');
+    container.className = 'relative'; 
+
     const accordionImage = document.createElement('img');
     accordionImage.src = image;
+    accordionImage.className = 'w-[311px] h-[176px]'; 
 
-    const existingImage = accordionBox.querySelector('img');
-    if (existingImage) {
-      existingImage.remove();
+    const schedImage = document.createElement('img');
+    schedImage.src = './sched.png';
+    schedImage.className = 'absolute top-0 left-0 h-full w-full object-cover'; 
+
+    const existingContainer = accordionBox.querySelector('.relative');
+    if (existingContainer) {
+      existingContainer.remove();
     }
 
-    accordionBox.appendChild(accordionImage);
+    container.appendChild(accordionImage);
+    container.appendChild(schedImage);
+    accordionBox.appendChild(container);
   };
 
   const toggleAccordion = (image, tab) => {
-    if (window.innerWidth <= 640) {
+    if (window.innerWidth <= 890) {
       const isTabOpen = tab.classList.contains('active');
 
       const activeTab = accordionBox.querySelector('.active');
@@ -52,6 +62,7 @@ const accordion = () => {
       loadAccordionImage(image);
     }
   };
+
   toggleAccordion('./bt.tab1.png', tab1);
 
   return accordionBox;

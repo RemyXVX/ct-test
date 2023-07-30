@@ -25,15 +25,25 @@ const carousel = () => {
   carouselBox.appendChild(tabs);
 
   const loadCarouselImage = (image) => {
+    const container = document.createElement('div');
+    container.className = 'relative'; 
+
     const carouselImage = document.createElement('img');
     carouselImage.src = image;
+    carouselImage.className = 'w-full h-auto md:w-[1216px] md:h-[731px]'; 
 
-    const existingImage = carouselBox.querySelector('img');
-    if (existingImage) {
-      existingImage.remove();
+    const schedImage = document.createElement('img');
+    schedImage.src = './sched.png';
+    schedImage.className = 'absolute top-20 left-10 opacity-98'; 
+
+    const existingContainer = carouselBox.querySelector('.relative');
+    if (existingContainer) {
+      existingContainer.remove();
     }
 
-    carouselBox.appendChild(carouselImage);
+    container.appendChild(carouselImage);
+    container.appendChild(schedImage);
+    carouselBox.appendChild(container);
   };
 
   loadCarouselImage('./bt.tab1.png');
