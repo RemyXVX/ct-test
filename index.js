@@ -9,7 +9,7 @@ const indexContainer = () => {
   const mainContent = main();
   const footerContent = footer();
 
-  container.style.backgroundColor = 'white'; // Set the background color to pink
+  container.style.backgroundColor = 'white';
 
   container.appendChild(headerContent);
   container.appendChild(mainContent);
