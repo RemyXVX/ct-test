@@ -3,7 +3,7 @@ const carousel = () => {
   carouselBox.className = 'bg-slate-600';
 
   const tabs = document.createElement('div');
-  tabs.className = 'flex';
+  tabs.className = 'flex mx-24';
 
   const tab1 = document.createElement('div');
   tab1.textContent = 'MOUNTAIN 1';
@@ -30,11 +30,11 @@ const carousel = () => {
 
     const carouselImage = document.createElement('img');
     carouselImage.src = image;
-    carouselImage.className = 'w-full h-auto md:w-[1216px] md:h-[731px]'; 
+    carouselImage.className = 'w-full h-auto'; 
 
     const schedImage = document.createElement('img');
     schedImage.src = './sched.png';
-    schedImage.className = 'absolute top-20 left-10 opacity-98'; 
+    schedImage.className = 'absolute top-20 left-36 opacity-98 h-auto w-auto'; 
 
     const existingContainer = carouselBox.querySelector('.relative');
     if (existingContainer) {

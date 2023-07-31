@@ -1,6 +1,6 @@
 const footer = () => {
   const footerContainer = document.createElement('div');
-  footerContainer.className = 'bg-slate-600 flex items-center py-2 md:py-4 md:px-24';
+  footerContainer.className = 'bg-slate-600 flex items-center py-2 md:py-4 md:px-36';
   const logo = document.createElement('img');
   logo.src = './logo-dark.png';
   logo.className = 'ml-4 md:ml-8';

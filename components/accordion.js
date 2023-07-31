@@ -25,11 +25,11 @@ const accordion = () => {
 
     const accordionImage = document.createElement('img');
     accordionImage.src = image;
-    accordionImage.className = 'w-[311px] h-[176px]'; 
+    accordionImage.className = 'w-full'; 
 
     const schedImage = document.createElement('img');
     schedImage.src = './sched.png';
-    schedImage.className = 'absolute top-0 left-0 h-full w-full object-cover'; 
+    schedImage.className = 'scale-75 absolute top-0 left-0 h-full w-full object-fit'; 
 
     const existingContainer = accordionBox.querySelector('.relative');
     if (existingContainer) {
@@ -42,7 +42,7 @@ const accordion = () => {
   };
 
   const toggleAccordion = (image, tab) => {
-    if (window.innerWidth <= 890) {
+    if (window.innerWidth <= 800) {
       const isTabOpen = tab.classList.contains('active');
 
       const activeTab = accordionBox.querySelector('.active');
